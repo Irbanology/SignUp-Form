@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+            /* Light blue background */
+        }
+
+        h1#nam {
+            color: #333;
+            font-size: 3rem;
+            /* Large font size for emphasis */
+            font-weight: 600;
+            text-align: center;
+            background: #ffebcd;
+            /* Light beige background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Adds shadow effect */
+            width: fit-content;
+        }
+    </style>
+    <script src="Script.js"></script>
+</head>
+
+<body>
+    <h1 id="nam">Hi</h1>
+</body>
+
+<script>
+    window.onload = function () {
+        var storedName = sessionStorage.getItem("username");
+        console.log(storedName);
+        var nam = document.getElementById("nam");
+        if (storedName) {
+            nam.innerText = "Welcome, " + storedName + "!";
+        } else {
+            nam.innerText = "Welcome, Guest!";
+        }
+    };
+</script>
+
+</html>
